@@ -25,7 +25,7 @@ def packetreader():
         Generic no hostnames found message 
     """
     pcap = 'sniff.pcap'
-    pkts = readpcap(pcap)
+    pkts = rdpcap(pcap)
     for p in pkts:
         if p.haslayer(DNS):
             if p.qdcount > 0 and isinstance(p.qd, DNSQR):
